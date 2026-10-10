@@ -1,0 +1,67 @@
+*{box-sizing:border-box}
+:root{--bg:#10090b;--panel:#191013;--red:#c51f32;--bright:#f04a58;--cream:#f2e7df;--muted:#b6a3a1;--line:rgba(238,67,83,.28)}
+html{min-height:100%;scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#351018 0%,#160b0e 42%,#090709 100%);color:var(--cream);font-family:Montserrat,Arial,sans-serif;min-height:100vh;overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;pointer-events:none;z-index:-1}
+body:before{inset:0;background:linear-gradient(120deg,transparent 40%,rgba(196,31,50,.06),transparent 70%)}
+body:after{width:360px;height:360px;border:1px solid rgba(220,44,61,.12);border-radius:50%;right:-180px;top:20%;box-shadow:0 0 0 32px rgba(220,44,61,.025),0 0 0 70px rgba(220,44,61,.02)}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:5;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+.topline{display:flex;justify-content:space-between;gap:12px;padding:17px clamp(16px,5vw,60px);font-size:9px;letter-spacing:2px;color:#b98b8d;border-bottom:1px solid rgba(255,255,255,.07)}
+.site-shell{width:min(100% - 30px,760px);margin:0 auto;min-height:calc(100vh - 50px);display:flex;flex-direction:column}
+.screen{display:none;position:relative;flex:1;min-height:620px;padding:clamp(28px,6vw,60px) clamp(8px,3vw,24px) 30px;animation:arrive .45s ease both}
+.screen.active{display:flex;flex-direction:column;align-items:center;justify-content:center}
+@keyframes arrive{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow,.section-mark{font-size:10px;letter-spacing:2.5px;color:#dc7b83;text-align:center;font-weight:700}
+h1,h2,h3{font-family:"Permanent Marker",Impact,sans-serif;font-weight:400;text-align:center;line-height:1.12;margin:15px 0 18px}
+h1{font-size:clamp(44px,11vw,86px);letter-spacing:1px;text-shadow:4px 4px 0 #59101a,0 0 28px #9c182d66}
+h1 span{display:block;color:var(--bright)}
+h2{font-size:clamp(27px,6vw,43px);max-width:620px}
+h3{font-size:25px}
+p{line-height:1.85;font-size:14px;color:#d8c8c4;max-width:590px;text-align:center;margin:8px auto 14px}
+.lead{font-size:clamp(15px,3.5vw,19px);color:#f2e7df}
+.small-note{font-family:"Special Elite",serif;color:#bda8a6;font-size:13px;margin-top:12px}
+.mini-label{font-size:8px;letter-spacing:2px;color:#77545a;text-align:center;margin-top:35px}
+.hero-art{height:140px;width:100%;max-width:400px;position:relative;display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.halo{width:115px;height:115px;border:1px solid #c51f3255;border-radius:50%;box-shadow:0 0 0 14px #c51f320c,0 0 40px #c51f3220;position:absolute}
+.rose{position:absolute;filter:drop-shadow(0 7px 12px #000);font-size:48px}
+.rose-one{left:calc(50% - 83px);top:23px;transform:rotate(-22deg)}
+.rose-two{right:calc(50% - 96px);top:54px;font-size:36px;transform:rotate(28deg)}
+.guitar{font-size:62px;position:absolute;right:calc(50% - 60px);top:22px;transform:rotate(18deg);filter:drop-shadow(0 7px 8px #000)}
+.star{position:absolute;color:#e64b5b}.star-one{top:8px;left:25%}.star-two{right:23%;bottom:12px}
+.btn{border:1px solid transparent;border-radius:2px;padding:14px 19px;font-family:Montserrat,Arial,sans-serif;font-size:10px;letter-spacing:1.4px;font-weight:700;cursor:pointer;transition:transform .18s,background .18s,border-color .18s;color:var(--cream);min-height:46px}
+.btn:hover{transform:translateY(-2px)}.btn:focus-visible,a:focus-visible{outline:2px solid #ff8790;outline-offset:4px}
+.btn-red{background:linear-gradient(135deg,#c51f32,#8f1325);box-shadow:0 8px 24px #900f252e;margin-top:22px}.btn-red:hover{background:#e32a41}
+.btn-red span{padding-left:14px}.btn-ghost{background:transparent;border-color:#69404a;color:#d8bfc0}.btn-ghost:hover{border-color:var(--bright);background:#c51f3214}
+.symbol{font-size:30px;color:var(--bright);margin:18px 0 4px;text-shadow:0 0 18px #c51f3255}
+blockquote{font-family:"Special Elite",serif;text-align:center;color:#efb4b8;border-left:2px solid var(--red);padding:12px 20px;margin:25px auto 10px;max-width:540px;background:linear-gradient(90deg,transparent,#c51f320c,transparent);line-height:1.8;font-size:15px}
+.nav-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+.letter{width:min(100%,590px);padding:22px clamp(17px,4vw,34px);border:1px solid #6c303a;background:linear-gradient(135deg,#1b1013,#130b0d);box-shadow:8px 8px 0 #090608;position:relative}
+.letter:before{content:"";position:absolute;inset:7px;border:1px solid #6c303a55;pointer-events:none}
+.letter p{text-align:left;font-family:"Special Elite",serif;font-size:14px;line-height:1.9;position:relative}
+.letter .signature{text-align:right;margin-top:24px;color:#e7b8bb}
+.tracks{width:min(100%,590px);margin:18px auto 0;border-top:1px solid var(--line)}
+.track{display:flex;align-items:center;gap:14px;padding:15px 12px;border-bottom:1px solid var(--line);text-decoration:none;color:var(--cream);transition:background .2s}
+.track:hover{background:#c51f3218}.track-number{font-family:"Special Elite",serif;color:#e74b5c;font-size:14px}
+.track strong{font-size:13px;display:block}.track small{display:block;color:#aa9294;font-size:10px;margin-top:5px}.track>span:nth-child(2){flex:1}.play{border:1px solid #7b3440;border-radius:50%;width:31px;height:31px;display:grid;place-items:center;font-size:10px;color:#ee8c95}
+.tiny{font-size:10px;color:#927b7d}
+.quote-card{width:min(100%,540px);padding:28px 20px 20px;border:1px solid #6c303a;background:linear-gradient(140deg,#211116,#120b0e);margin:15px auto 0;position:relative}
+.quote-mark{font-family:Georgia,serif;font-size:52px;color:#d62c41;line-height:.6;display:block;text-align:center}
+.quote-card p{font-family:"Special Elite",serif;font-size:clamp(16px,3.5vw,20px);color:#f0d9d7;min-height:65px;display:grid;place-items:center}
+.quote-bottom{display:block;text-align:center;font-size:8px;letter-spacing:2px;color:#9b5d65;margin-top:16px}
+.quote-button{margin-top:15px}
+.surprise-wrap{width:min(100%,530px);min-height:190px;display:grid;place-items:center;margin-top:10px}
+.surprise-box{width:190px;height:150px;border:1px dashed #b74451;background:linear-gradient(145deg,#31131a,#160b0e);color:#f2d8d9;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center;cursor:pointer;font-size:9px;letter-spacing:1.5px;transition:transform .2s,box-shadow .2s}
+.surprise-box:hover{transform:rotate(-2deg) scale(1.03);box-shadow:0 0 35px #bd203333}.box-icon{font-size:47px}
+.surprise-message{border:1px solid #80323d;background:#1b0d11;padding:24px;width:100%;animation:arrive .4s ease}
+.surprise-message p{font-size:13px}.big-rose{text-align:center;font-size:45px}.red-script{font-family:"Special Elite",serif;color:#f07883!important;font-size:18px!important}
+[hidden]{display:none!important}
+.final-art{height:105px;margin-bottom:0}.final-art .rose-one{left:calc(50% - 28px);top:12px}.final-art .guitar{right:calc(50% - 90px);top:4px}
+.final-title{color:#f0d5d4;text-shadow:3px 3px 0 #57101b}
+.final-quote{font-family:"Special Elite",serif;color:#f18b94;font-size:16px;margin:20px auto}
+.end-stamp{border-top:1px solid #71313a;border-bottom:1px solid #71313a;padding:12px 8px;margin:15px 0 0;font-size:9px;letter-spacing:1.8px;color:#c69a9c;text-align:center}
+.end-stamp span{color:#f24c5d;padding:0 8px}
+footer{border-top:1px solid rgba(255,255,255,.08);padding:18px 4px 24px;display:flex;justify-content:space-between;gap:10px;font-size:8px;letter-spacing:1.5px;color:#765b60}
+@media(max-width:520px){.topline{font-size:7px;letter-spacing:1px}.screen{min-height:calc(100svh - 115px);padding-top:25px}.hero-art{height:118px}.rose{font-size:40px}.guitar{font-size:51px}.btn{font-size:9px;padding:13px 14px}.nav-buttons{gap:8px}.letter{padding:18px 16px}.letter p{font-size:13px}.track{gap:10px;padding:13px 6px}.track strong{font-size:12px}.track small{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+
+.track-info{flex:1;min-width:0}.track-info audio{display:block;width:100%;max-width:390px;height:34px;margin-top:10px;accent-color:#c51f32}.track{align-items:flex-start}.track-number{padding-top:4px}
